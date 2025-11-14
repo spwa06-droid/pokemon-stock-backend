@@ -1,0 +1,21 @@
+name: Deploy to Render
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: echo "No tests configured"
+      - name: Manual deploy step
+        run: echo "Connect repo to Render/Railway and deploy using Dockerfile"
