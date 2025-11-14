@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head><title>Pokemon Stock Finder Admin</title></head>
+<body>
+<h1>Cached queries</h1>
+<ul>
+{% for q in queries %}
+  <li>{{ q }}</li>
+{% else %}
+  <li>No cached queries</li>
+{% endfor %}
+</ul>
+
+<h2>Trigger search and notify</h2>
+<form action="/api/notify" method="post">
+  <input name="item" placeholder="Item (e.g. pikachu)" required />
+  <button type="submit">Search & Notify</button>
+</form>
+</body>
+</html>
